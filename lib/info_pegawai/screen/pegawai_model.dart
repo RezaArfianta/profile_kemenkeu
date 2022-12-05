@@ -1,13 +1,26 @@
 class Pegawai {
-  String photo;
-  String nip18;
-  String nama;
-  String kodeGolonganRuang;
-  String jabatan;
-  String statusPegawai;
-  String email;
-  String organisasi;
-  int idPegawai;
+  String? photo;
+  String? nip18;
+  String? nama;
+  String? kodeGolonganRuang;
+  String? jabatan;
+  String? statusPegawai;
+  String? email;
+  String? organisasi;
+  int? idPegawai;
+
+  // Pegawai({
+  //   required this.photo,
+  //   required this.nip18,
+  //   required this.nama,
+  //   required this.kodeGolonganRuang,
+  //   required this.jabatan,
+  //   required this.statusPegawai,
+  //   required this.email,
+  //   required this.organisasi,
+  //   required this.idPegawai
+  // })
+
   Pegawai.fromJson(Map<String, dynamic> json) {
     idPegawai = json["Idpegawai"];
     photo = json["Photo"];
@@ -19,17 +32,16 @@ class Pegawai {
     email = json["Email"];
     organisasi = json["Organisasi"];
   }
-  Pegawai();
 }
 
 class Organisasi {
-  String namaOrganisasi;
-  int eselon;
-  String uraianLengkap;
-  String uraianPendek;
-  String alamat;
-  String namaPejabat;
-  int esl;
+  String? namaOrganisasi;
+  int? eselon;
+  String? uraianLengkap;
+  String? uraianPendek;
+  String? alamat;
+  String? namaPejabat;
+  int? esl;
 
   Organisasi.fromJson(Map<String, dynamic> json) {
     namaOrganisasi = json["NamaOrganisasi"];

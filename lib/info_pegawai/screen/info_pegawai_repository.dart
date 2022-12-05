@@ -2,9 +2,10 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:ekemenkeu/app/repository/ekemenkeu_repository.dart';
-import 'package:ekemenkeu/config/api_url.dart';
-import 'package:ekemenkeu/module/info_pegawai/screen/pegawai_model.dart';
+import 'package:profilekemenkeu/app/repository/ekemenkeu_repository.dart';
+import 'package:profilekemenkeu/api_url.dart';
+import 'package:profilekemenkeu/info_pegawai/screen/pegawai_model.dart';
+import 'package:profilekemenkeu/app/repository/ekemenkeu_repository.dart';
 
 class InfoPegRepository {
   EKemenkeuRepository _repository;
@@ -38,11 +39,7 @@ class InfoPegRepository {
       log(jsonEncode(res.data));
       var list = List<Organisasi>.from(
           res.data['Data'].map((i) => Organisasi.fromJson(i)));
-      res.data['Data'].map(
-          (i) => {
-            print(i)
-          }
-      );
+      res.data['Data'].map((i) => {print(i)});
       print(list);
       return list;
     } on DioError catch (e) {

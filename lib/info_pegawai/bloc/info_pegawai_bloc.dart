@@ -36,7 +36,7 @@ class InfoPegawaiBloc extends Bloc<InfoPegawaiEvent, InfoPegawaiState> {
 class InfoOrganisasiBloc extends Bloc<InfoPegawaiEvent, InfoPegawaiState> {
   final InfoPegRepository repository;
   final String key;
-  InfoOrganisasiBloc({this.repository, this.key})
+  InfoOrganisasiBloc({required this.repository, required this.key})
       : super(InfoOrganisasiInitial());
 
   @override

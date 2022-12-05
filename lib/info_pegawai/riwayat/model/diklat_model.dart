@@ -1,68 +1,69 @@
 class Diklat {
-  int idpegawaiDiklat;
-  int idpegawai;
-  int idrefJenisDiklat;
-  String tanggalDiklat;
-  int tahunDiklat;
-  String namaDiklat;
-  String noSertifikat;
-  String institusiPenyelenggara;
-  String namaInstansi;
-  String kompetensi;
-  String lampiran;
-  String createdDate;
-  String aktif;
-  int idrefStatusData;
-  int idrefValiditas;
-  int createdBy;
-  int idlama;
-  int jamlat;
-  String tanggalSertifikat;
-  String linkSertifikat;
-  String subjenisDiklat;
-  String tanggalSelesaiDiklat;
-  String rumpunDiklat;
-  int idrefDiklatSemantik;
-  int idCourse;
-  String batch;
-  String klasifikasiDiklat;
-  String uraianStatusValiditas;
-  String createdByNavigation;
-  int idlamaNavigation;
-  int idrefValiditasNavigation;
+  int? idpegawaiDiklat;
+  int? idpegawai;
+  int? idrefJenisDiklat;
+  String? tanggalDiklat;
+  int? tahunDiklat;
+  String? namaDiklat;
+  String? noSertifikat;
+  String? institusiPenyelenggara;
+  String? namaInstansi;
+  String? kompetensi;
+  String? lampiran;
+  String? createdDate;
+  String? aktif;
+  int? idrefStatusData;
+  int? idrefValiditas;
+  int? createdBy;
+  int? idlama;
+  int? jamlat;
+  String? tanggalSertifikat;
+  String? linkSertifikat;
+  String? subjenisDiklat;
+  String? tanggalSelesaiDiklat;
+  String? rumpunDiklat;
+  int? idrefDiklatSemantik;
+  int? idCourse;
+  String? batch;
+  String? klasifikasiDiklat;
+  String? uraianStatusValiditas;
+  String? createdByNavigation;
+  int? idlamaNavigation;
+  int? idrefValiditasNavigation;
 
-  Diklat(
-      {this.idpegawaiDiklat,
-        this.idpegawai,
-        this.idrefJenisDiklat,
-        this.tanggalDiklat,
-        this.tahunDiklat,
-        this.namaDiklat,
-        this.noSertifikat,
-        this.institusiPenyelenggara,
-        this.namaInstansi,
-        this.kompetensi,
-        this.lampiran,
-        this.createdDate,
-        this.aktif,
-        this.idrefStatusData,
-        this.idrefValiditas,
-        this.createdBy,
-        this.idlama,
-        this.jamlat,
-        this.tanggalSertifikat,
-        this.linkSertifikat,
-        this.subjenisDiklat,
-        this.tanggalSelesaiDiklat,
-        this.rumpunDiklat,
-        this.idrefDiklatSemantik,
-        this.idCourse,
-        this.batch,
-        this.klasifikasiDiklat,
-        this.uraianStatusValiditas,
-        this.createdByNavigation,
-        this.idlamaNavigation,
-        this.idrefValiditasNavigation,});
+  Diklat({
+    required this.idpegawaiDiklat,
+    required this.idpegawai,
+    required this.idrefJenisDiklat,
+    required this.tanggalDiklat,
+    required this.tahunDiklat,
+    required this.namaDiklat,
+    required this.noSertifikat,
+    required this.institusiPenyelenggara,
+    required this.namaInstansi,
+    required this.kompetensi,
+    required this.lampiran,
+    required this.createdDate,
+    required this.aktif,
+    required this.idrefStatusData,
+    required this.idrefValiditas,
+    required this.createdBy,
+    required this.idlama,
+    required this.jamlat,
+    required this.tanggalSertifikat,
+    required this.linkSertifikat,
+    required this.subjenisDiklat,
+    required this.tanggalSelesaiDiklat,
+    required this.rumpunDiklat,
+    required this.idrefDiklatSemantik,
+    required this.idCourse,
+    required this.batch,
+    required this.klasifikasiDiklat,
+    required this.uraianStatusValiditas,
+    required this.createdByNavigation,
+    required this.idlamaNavigation,
+    required this.idrefValiditasNavigation,
+  });
 
   Diklat.fromJson(Map<String, dynamic> json) {
     idpegawaiDiklat = json['IdpegawaiDiklat'];
@@ -134,4 +135,3 @@ class Diklat {
     return data;
   }
 }
-

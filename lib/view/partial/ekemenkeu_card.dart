@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class EKemenkeuCard extends StatelessWidget {
   final Widget child;
 
-  const EKemenkeuCard({Key key, this.child}) : super(key: key);
-
+  const EKemenkeuCard({Key? key, required this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

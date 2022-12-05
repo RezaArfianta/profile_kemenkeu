@@ -2,21 +2,22 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:ekemenkeu/app/repository/ekemenkeu_repository.dart';
-import 'package:ekemenkeu/config/api_url.dart';
-import 'package:ekemenkeu/module/info_pegawai/data_pokok/model/data_pokok_model.dart';
+import 'package:profilekemenkeu/info_pegawai/data_pokok/model/data_pokok_model.dart';
+
+import '../../../api_url.dart';
+import '../../../app/repository/ekemenkeu_repository.dart';
 
 class DataPokokRepository {
-  EKemenkeuRepository _repository;
+  EKemenkeuRepository? repository;
 
   DataPokokRepository(EKemenkeuRepository repository) {
-    _repository = repository;
+    repository = repository;
   }
 
-  Future<DataPokok> getDataPokok() async {
+  Future<DataPokok?> getDataPokok() async {
     try {
-      Response res = await _repository.dio.get(
-          '${ApiUrl.serviceUrl}/hris/profil/Pegawai');
+      Response res =
+          await repository!.dio.get('${ApiUrl.serviceUrl}/hris/profil/Pegawai');
       log(jsonEncode(res.data));
       return DataPokok.fromJson(res.data["Data"]);
     } on DioError catch (e) {

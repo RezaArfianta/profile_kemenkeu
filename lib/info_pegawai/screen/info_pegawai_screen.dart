@@ -1,8 +1,8 @@
-import 'package:ekemenkeu/app/repository/ekemenkeu_repository.dart';
-import 'package:ekemenkeu/module/info_pegawai/bloc/info_pegawai_bloc.dart';
-import 'package:ekemenkeu/module/info_pegawai/screen/info_pegawai_repository.dart';
-import 'package:ekemenkeu/module/nadine/list_surat/presentation/widgets/search_bar.dart';
-import 'package:ekemenkeu/view/partial/loading_indicator.dart';
+import 'package:profilekemenkeu/app/repository/ekemenkeu_repository.dart';
+import 'package:profilekemenkeu/info_pegawai/bloc/info_pegawai_bloc.dart';
+import 'package:profilekemenkeu/info_pegawai/screen/info_pegawai_repository.dart';
+// import 'package:profilekemenkeu/nadine/list_surat/presentation/widgets/search_bar.dart';
+import 'package:profilekemenkeu/view/partial/loading_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

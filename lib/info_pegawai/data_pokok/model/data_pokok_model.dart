@@ -43,93 +43,114 @@ class DataPokok {
   int grading;
 
   DataPokok(
-      {this.idpegawai,
-        this.nip9,
-        this.nip18,
-        this.nik,
-        this.nama,
-        this.kodeGolongan,
-        this.kodeGolonganRuang,
-        this.jabatan,
-        this.jenisJabatan,
-        this.statusPegawai,
-        this.gelarBelakang,
-        this.esl1,
-        this.esl2,
-        this.esl3,
-        this.esl4,
-        this.esl5,
-        this.kdSatker,
-        this.namaSatker,
-        this.tempatLahir,
-        this.tanggalLahir,
-        this.jenisKelamin,
-        this.agama,
-        this.golonganDarah,
-        this.npwp,
-        this.alamatKtp,
-        this.kotaKtp,
-        this.provinsiKtp,
-        this.kodePosKtp,
-        this.alamatDomisili,
-        this.kotaDomisili,
-        this.provinsiDomisili,
-        this.kodePosDomisili,
-        this.nomorTelepon,
-        this.email,
-        this.noHp,
-        this.noKk,
-        this.namaKontakDarurat,
-        this.nomorKontakDarurat,
-        this.kodeOrganisasi,
-        this.kodeIndukOrganisasi,
-        this.organisasi,
-        this.grading});
+      {required this.idpegawai,
+      required this.nip9,
+      required this.nip18,
+      required this.nik,
+      required this.nama,
+      required this.kodeGolongan,
+      required this.kodeGolonganRuang,
+      required this.jabatan,
+      required this.jenisJabatan,
+      required this.statusPegawai,
+      required this.gelarBelakang,
+      required this.esl1,
+      required this.esl2,
+      required this.esl3,
+      required this.esl4,
+      required this.esl5,
+      required this.kdSatker,
+      required this.namaSatker,
+      required this.tempatLahir,
+      required this.tanggalLahir,
+      required this.jenisKelamin,
+      required this.agama,
+      required this.golonganDarah,
+      required this.npwp,
+      required this.alamatKtp,
+      required this.kotaKtp,
+      required this.provinsiKtp,
+      required this.kodePosKtp,
+      required this.alamatDomisili,
+      required this.kotaDomisili,
+      required this.provinsiDomisili,
+      required this.kodePosDomisili,
+      required this.nomorTelepon,
+      required this.email,
+      required this.noHp,
+      required this.noKk,
+      required this.namaKontakDarurat,
+      required this.nomorKontakDarurat,
+      required this.kodeOrganisasi,
+      required this.kodeIndukOrganisasi,
+      required this.organisasi,
+      required this.grading});
 
-  DataPokok.fromJson(Map<String, dynamic> json) {
-    idpegawai = json['Idpegawai'];
-    nip9 = json['Nip9'];
-    nip18 = json['Nip18'];
-    nik = json['Nik'];
-    nama = json['Nama'];
-    kodeGolongan = json['KodeGolongan'];
-    kodeGolonganRuang = json['KodeGolonganRuang'];
-    jabatan = json['Jabatan'];
-    jenisJabatan = json['JenisJabatan'];
-    statusPegawai = json['StatusPegawai'];
-    gelarBelakang = json['GelarBelakang'];
-    esl1 = json['Esl1'];
-    esl2 = json['Esl2'];
-    esl3 = json['Esl3'];
-    esl4 = json['Esl4'];
-    esl5 = json['Esl5'];
-    kdSatker = json['KdSatker'];
-    namaSatker = json['NamaSatker'];
-    tempatLahir = json['TempatLahir'];
-    tanggalLahir = json['TanggalLahir'];
-    jenisKelamin = json['JenisKelamin'];
-    agama = json['Agama'];
-    golonganDarah = json['GolonganDarah'];
-    npwp = json['Npwp'];
-    alamatKtp = json['AlamatKtp'];
-    kotaKtp = json['KotaKtp'];
-    provinsiKtp = json['ProvinsiKtp'];
-    kodePosKtp = json['KodePosKtp'];
-    alamatDomisili = json['AlamatDomisili'];
-    kotaDomisili = json['KotaDomisili'];
-    provinsiDomisili = json['ProvinsiDomisili'];
-    kodePosDomisili = json['KodePosDomisili'];
-    nomorTelepon = json['NomorTelepon'];
-    email = json['Email'];
-    noHp = json['NoHp'];
-    noKk = json['NoKk'];
-    namaKontakDarurat = json['NamaKontakDarurat'];
-    nomorKontakDarurat = json['NomorKontakDarurat'];
-    kodeOrganisasi = json['KodeOrganisasi'];
-    kodeIndukOrganisasi = json['KodeIndukOrganisasi'];
-    organisasi = json['Organisasi'];
-    grading = json['Grading'];
-  }
+  factory DataPokok.fromJson(Map<String, dynamic> json) => DataPokok(
+        idpegawai: json['Idpegawai'] == null ? null : json['Idpegawai'],
+        nip9: json['Nip9'] == null ? null : json['Nip9'],
+        nip18: json['Nip18'] == null ? null : json['Nip18'],
+        nik: json['Nik'] == null ? null : json['Nik'],
+        nama: json['Nama'] == null ? null : json['Nama'],
+        kodeGolongan:
+            json['KodeGolongan'] == null ? null : json['KodeGolongan'],
+        kodeGolonganRuang: json['KodeGolonganRuang'] == null
+            ? null
+            : json['KodeGolonganRuang'],
+        jabatan: json['Jabatan'] == null ? null : json['Jabatan'],
+        jenisJabatan:
+            json['JenisJabatan'] == null ? null : json['JenisJabatan'],
+        statusPegawai:
+            json['StatusPegawai'] == null ? null : json['StatusPegawai'],
+        gelarBelakang:
+            json['GelarBelakang'] == null ? null : json['GelarBelakang'],
+        esl1: json['Esl1'] == null ? null : json['Esl1'],
+        esl2: json['Esl2'] == null ? null : json['Esl2'],
+        esl3: json['Esl3'] == null ? null : json['Esl3'],
+        esl4: json['Esl4'] == null ? null : json['Esl4'],
+        esl5: json['Esl5'] == null ? null : json['Esl5'],
+        kdSatker: json['KdSatker'] == null ? null : json['KdSatker'],
+        namaSatker: json['NamaSatker'] == null ? null : json['NamaSatker'],
+        tempatLahir: json['TempatLahir'] == null ? null : json['TempatLahir'],
+        tanggalLahir:
+            json['TanggalLahir'] == null ? null : json['TanggalLahir'],
+        jenisKelamin:
+            json['JenisKelamin'] == null ? null : json['JenisKelamin'],
+        agama: json['Agama'] == null ? null : json['Agama'],
+        golonganDarah:
+            json['GolonganDarah'] == null ? null : json['GolonganDarah'],
+        npwp: json['Npwp'] == null ? null : json['Npwp'],
+        alamatKtp: json['AlamatKtp'] == null ? null : json['AlamatKtp'],
+        kotaKtp: json['KotaKtp'] == null ? null : json['KotaKtp'],
+        provinsiKtp: json['ProvinsiKtp'] == null ? null : json['ProvinsiKtp'],
+        kodePosKtp: json['KodePosKtp'] == null ? null : json['KodePosKtp'],
+        alamatDomisili:
+            json['AlamatDomisili'] == null ? null : json['AlamatDomisili'],
+        kotaDomisili:
+            json['KotaDomisili'] == null ? null : json['KotaDomisili'],
+        provinsiDomisili:
+            json['ProvinsiDomisili'] == null ? null : json['ProvinsiDomisili'],
+        kodePosDomisili:
+            json['KodePosDomisili'] == null ? null : json['KodePosDomisili'],
+        nomorTelepon:
+            json['NomorTelepon'] == null ? null : json['NomorTelepon'],
+        email: json['Email'] == null ? null : json['Email'],
+        noHp: json['NoHp'] == null ? null : json['NoHp'],
+        noKk: json['NoKk'] == null ? null : json['NoKk'],
+        namaKontakDarurat: json['NamaKontakDarurat'] == null
+            ? null
+            : json['NamaKontakDarurat'],
+        nomorKontakDarurat: json['NomorKontakDarurat'] == null
+            ? null
+            : json['NomorKontakDarurat'],
+        kodeOrganisasi:
+            json['KodeOrganisasi'] == null ? null : json['KodeOrganisasi'],
+        kodeIndukOrganisasi: json['KodeIndukOrganisasi'] == null
+            ? null
+            : json['KodeIndukOrganisasi'],
+        organisasi: json['Organisasi'] == null ? null : json['Organisasi'],
+        grading: json['Grading'] == null ? null : json['Grading'],
+      );
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
@@ -178,4 +199,3 @@ class DataPokok {
     return data;
   }
 }
-

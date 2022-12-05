@@ -1,68 +1,68 @@
 class Jabatan {
-  int idpegawaiJabatan;
-  int idpegawai;
-  int idjabatan;
-  int idjabatanAtasan;
-  String tanggalMulai;
-  String tanggalSelesai;
-  String noSk;
-  String tanggalSk;
-  int idrefStatusJabatan;
-  String tanggalPelantikan;
-  String lampiran;
-  int idrefValiditas;
-  String createdDate;
-  String aktif;
-  int createdBy;
-  int idrefStatusData;
-  int idlama;
-  String jenisJabatan;
-  String jabatan;
-  String unit;
-  String statusJabatan;
-  String jabatanAtasan;
-  String organisasi;
-  String kodeOrganisasi;
-  String uraianStatusValiditas;
-  String esl1;
-  int idjabatanAtasanNavigation;
-  int idjabatanNavigation;
-  int idlamaNavigation;
-  int idrefStatusJabatanNavigation;
-  int idrefValiditasNavigation;
+  int? idpegawaiJabatan;
+  int? idpegawai;
+  int? idjabatan;
+  int? idjabatanAtasan;
+  String? tanggalMulai;
+  String? tanggalSelesai;
+  String? noSk;
+  String? tanggalSk;
+  int? idrefStatusJabatan;
+  String? tanggalPelantikan;
+  String? lampiran;
+  int? idrefValiditas;
+  String? createdDate;
+  String? aktif;
+  int? createdBy;
+  int? idrefStatusData;
+  int? idlama;
+  String? jenisJabatan;
+  String? jabatan;
+  String? unit;
+  String? statusJabatan;
+  String? jabatanAtasan;
+  String? organisasi;
+  String? kodeOrganisasi;
+  String? uraianStatusValiditas;
+  String? esl1;
+  int? idjabatanAtasanNavigation;
+  int? idjabatanNavigation;
+  int? idlamaNavigation;
+  int? idrefStatusJabatanNavigation;
+  int? idrefValiditasNavigation;
 
   Jabatan(
       {this.idpegawaiJabatan,
-        this.idpegawai,
-        this.idjabatan,
-        this.idjabatanAtasan,
-        this.tanggalMulai,
-        this.tanggalSelesai,
-        this.noSk,
-        this.tanggalSk,
-        this.idrefStatusJabatan,
-        this.tanggalPelantikan,
-        this.lampiran,
-        this.idrefValiditas,
-        this.createdDate,
-        this.aktif,
-        this.createdBy,
-        this.idrefStatusData,
-        this.idlama,
-        this.jenisJabatan,
-        this.jabatan,
-        this.unit,
-        this.statusJabatan,
-        this.jabatanAtasan,
-        this.organisasi,
-        this.kodeOrganisasi,
-        this.uraianStatusValiditas,
-        this.esl1,
-        this.idjabatanAtasanNavigation,
-        this.idjabatanNavigation,
-        this.idlamaNavigation,
-        this.idrefStatusJabatanNavigation,
-        this.idrefValiditasNavigation});
+      this.idpegawai,
+      this.idjabatan,
+      this.idjabatanAtasan,
+      this.tanggalMulai,
+      this.tanggalSelesai,
+      this.noSk,
+      this.tanggalSk,
+      this.idrefStatusJabatan,
+      this.tanggalPelantikan,
+      this.lampiran,
+      this.idrefValiditas,
+      this.createdDate,
+      this.aktif,
+      this.createdBy,
+      this.idrefStatusData,
+      this.idlama,
+      this.jenisJabatan,
+      this.jabatan,
+      this.unit,
+      this.statusJabatan,
+      this.jabatanAtasan,
+      this.organisasi,
+      this.kodeOrganisasi,
+      this.uraianStatusValiditas,
+      this.esl1,
+      this.idjabatanAtasanNavigation,
+      this.idjabatanNavigation,
+      this.idlamaNavigation,
+      this.idrefStatusJabatanNavigation,
+      this.idrefValiditasNavigation});
 
   Jabatan.fromJson(Map<String, dynamic> json) {
     idpegawaiJabatan = json['IdpegawaiJabatan'];
@@ -99,7 +99,7 @@ class Jabatan {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['IdpegawaiJabatan'] = this.idpegawaiJabatan;
     data['Idpegawai'] = this.idpegawai;
     data['Idjabatan'] = this.idjabatan;

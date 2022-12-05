@@ -1,10 +1,9 @@
-import 'package:ekemenkeu/module/info_pegawai/cari_pegawai/screen/cari_pegawai_page.dart';
-import 'package:ekemenkeu/module/info_pegawai/data_pokok/screen/data_pokok_page.dart';
-import 'package:ekemenkeu/module/info_pegawai/riwayat/screen/riwayat_page.dart';
+import 'package:profilekemenkeu/info_pegawai/cari_pegawai/screen/cari_pegawai_page.dart';
+import 'package:profilekemenkeu/info_pegawai/data_pokok/screen/data_pokok_page.dart';
+import 'package:profilekemenkeu/info_pegawai/riwayat/screen/riwayat_page.dart';
 import 'package:flutter/material.dart';
 
 class InfoPegawaiPage extends StatefulWidget {
-
   @override
   _InfoPegawaiPageState createState() => _InfoPegawaiPageState();
 }
@@ -13,9 +12,7 @@ class _InfoPegawaiPageState extends State<InfoPegawaiPage> {
   PageController pageController = PageController();
   static const List<Widget> _widgetOptions = [
     DataPokokPage(),
-
     RiwayatPage(),
-
     CariPegawaiPage(),
   ];
   final List<String> _tabs = ['Data Pokok', 'Riwayat', 'Cari Pegawai'];
@@ -38,9 +35,12 @@ class _InfoPegawaiPageState extends State<InfoPegawaiPage> {
         clipBehavior: Clip.antiAlias,
         child: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Data Pokok'),
-            BottomNavigationBarItem(icon: Icon(Icons.history), label: 'Riwayat'),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Cari Pegawai'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.list), label: 'Data Pokok'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.history), label: 'Riwayat'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.search), label: 'Cari Pegawai'),
           ],
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,

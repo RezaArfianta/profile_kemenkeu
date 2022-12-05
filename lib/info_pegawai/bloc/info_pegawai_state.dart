@@ -9,7 +9,7 @@ class InfoPegawaiLoading extends InfoPegawaiState {}
 
 class InfoPegawaiSuccess extends InfoPegawaiState {
   final List<Pegawai> pegawai;
-  InfoPegawaiSuccess({this.pegawai});
+  InfoPegawaiSuccess({required this.pegawai});
 }
 
 class InfoOrganisasiInitial extends InfoPegawaiState {}
@@ -18,5 +18,5 @@ class InfoOrganisasiLoading extends InfoPegawaiState {}
 
 class InfoOrganisasiSuccess extends InfoPegawaiState {
   final List<Organisasi> organisasi;
-  InfoOrganisasiSuccess({this.organisasi});
+  InfoOrganisasiSuccess({required this.organisasi});
 }

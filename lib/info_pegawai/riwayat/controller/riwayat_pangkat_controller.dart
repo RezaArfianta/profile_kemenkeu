@@ -1,14 +1,14 @@
-import 'package:ekemenkeu/app/repository/ekemenkeu_repository.dart';
-import 'package:ekemenkeu/global/ekemenkeu_storage.dart';
-import 'package:ekemenkeu/module/auth/bloc/auth_bloc.dart';
-import 'package:ekemenkeu/module/info_pegawai/data_pokok/model/data_pokok_model.dart';
-import 'package:ekemenkeu/module/info_pegawai/data_pokok/model/data_pokok_repository.dart';
-import 'package:ekemenkeu/module/info_pegawai/riwayat/model/pangkat_model.dart';
-import 'package:ekemenkeu/module/info_pegawai/riwayat/model/riwayat_repository.dart';
+import 'package:profilekemenkeu/app/repository/ekemenkeu_repository.dart';
+import 'package:profilekemenkeu/global/ekemenkeu_storage.dart';
+// import 'package:profilekemenkeu/auth/bloc/auth_bloc.dart';
+import 'package:profilekemenkeu/info_pegawai/data_pokok/model/data_pokok_model.dart';
+import 'package:profilekemenkeu/info_pegawai/data_pokok/model/data_pokok_repository.dart';
+import 'package:profilekemenkeu/info_pegawai/riwayat/model/pangkat_model.dart';
+import 'package:profilekemenkeu/info_pegawai/riwayat/model/riwayat_repository.dart';
 import 'package:get/get.dart';
 
-class RiwayatPangkatController extends GetxController{
-  var listPangkat = List<Pangkat>().obs;
+class RiwayatPangkatController extends GetxController {
+  var listPangkat = <Pangkat>[].obs;
   var isLoading = false.obs;
   var repo = RiwayatRepository(EKemenkeuRepository());
   var isError = false.obs;
@@ -17,12 +17,13 @@ class RiwayatPangkatController extends GetxController{
     // var sr = await
     isError.value = false;
     isLoading.value = true;
-    try{
-      listPangkat.value = await repo.getRiwayatPangkat(EKemenkeuStorage.local.getString("nip-pegawai"));
-      if (listPangkat.value == null){
+    try {
+      listPangkat.value = await repo
+          .getRiwayatPangkat(EKemenkeuStorage.local.getString("nip-pegawai"));
+      if (listPangkat.value == null) {
         isError.value = true;
       }
-    }on Error catch (e){
+    } on Error catch (e) {
       isError.value = true;
     }
     isLoading.value = false;
@@ -33,6 +34,4 @@ class RiwayatPangkatController extends GetxController{
     super.onInit();
     fetch();
   }
-
 }
-

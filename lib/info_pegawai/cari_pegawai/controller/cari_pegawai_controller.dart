@@ -1,13 +1,13 @@
-import 'package:ekemenkeu/app/repository/ekemenkeu_repository.dart';
-import 'package:ekemenkeu/module/info_pegawai/screen/info_pegawai_repository.dart';
-import 'package:ekemenkeu/module/info_pegawai/screen/pegawai_model.dart';
+import 'package:profilekemenkeu/app/repository/ekemenkeu_repository.dart';
+import 'package:profilekemenkeu/info_pegawai/screen/info_pegawai_repository.dart';
+import 'package:profilekemenkeu/info_pegawai/screen/pegawai_model.dart';
 import 'package:get/get.dart';
 
-class CariPegawaiController extends GetxController{
-  var searchResultPegawai = List<Pegawai>().obs;
-  var searchResultOrg = List<Organisasi>().obs;
+class CariPegawaiController extends GetxController {
+  var searchResultPegawai = <Pegawai>[].obs;
+  var searchResultOrg = <Organisasi>[].obs;
   var isLoading = false.obs;
-  var isSearched= false.obs;
+  var isSearched = false.obs;
   var repo = InfoPegRepository(EKemenkeuRepository());
   final mode;
 
@@ -18,11 +18,10 @@ class CariPegawaiController extends GetxController{
 
     isSearched.value = true;
     isLoading.value = true;
-    if(this.mode == "peg"){
+    if (this.mode == "peg") {
       searchResultPegawai.value = await repo.getInfoPegawai(key, 0, "35");
-    }else{
+    } else {
       searchResultOrg.value = await repo.getOrganisasi(key);
-
     }
     isLoading.value = false;
   }
@@ -36,8 +35,4 @@ class CariPegawaiController extends GetxController{
   void onClose() {
     super.onClose();
   }
-
-
-
 }
-

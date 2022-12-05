@@ -1,13 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:ekemenkeu/module/info_pegawai/cari_pegawai/controller/cari_pegawai_controller.dart';
-import 'package:ekemenkeu/view/partial/ekemenkeu_card.dart';
-import 'package:ekemenkeu/view/partial/loading_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CariPegawaiPage extends StatelessWidget {
+import 'package:profilekemenkeu/info_pegawai/cari_pegawai/controller/cari_pegawai_controller.dart';
+import 'package:profilekemenkeu/view/partial/ekemenkeu_card.dart';
+import 'package:profilekemenkeu/view/partial/loading_indicator.dart';
 
+class CariPegawaiPage extends StatelessWidget {
   const CariPegawaiPage();
 
   @override
@@ -17,21 +17,19 @@ class CariPegawaiPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           bottom: TabBar(
-            labelColor: Theme.of(context).textTheme.bodyMedium.color,
-
+            labelColor: Theme.of(context).textTheme.bodyMedium?.color,
             onTap: (index) {
               // Tab index when user select it, it start from zero
             },
             tabs: [
-            //   Material(child:
+              //   Material(child:
               Tab(text: ("Cari Pegawai")
-              // )
-            ),
+                  // )
+                  ),
 
               // Material(child:
               Tab(text: ("Cari Organisasi"))
               // ),
-
             ],
           ),
           title: Text('Cari Pegawai'),
@@ -45,13 +43,9 @@ class CariPegawaiPage extends StatelessWidget {
       ),
     );
   }
-
-
-
 }
 
 class _cariPegawaiBody extends GetView<CariPegawaiController> {
-
   @override
   Widget build(BuildContext context) {
     Get.put(CariPegawaiController("peg"), tag: "peg");
@@ -63,7 +57,6 @@ class _cariPegawaiBody extends GetView<CariPegawaiController> {
     // Get.create(() => CariPegawaiController("peg"));
     return Container(
       child: Column(
-
         children: [
           TextField(
             textInputAction: TextInputAction.search,
@@ -88,27 +81,25 @@ class _cariPegawaiBody extends GetView<CariPegawaiController> {
           //   ),
           // ),
           Obx(() {
-            if(controller.isLoading.value == true){
+            if (controller.isLoading.value == true) {
               return Expanded(
                 child: Container(
-                  child: Center(
-                      child: Loading()
-                  ),
+                  child: Center(child: Loading()),
                 ),
               );
-            }else{
-              if(controller.isSearched.value && controller.searchResultPegawai.length == 0){
+            } else {
+              if (controller.isSearched.value &&
+                  controller.searchResultPegawai.length == 0) {
                 return Expanded(
                   child: Container(
-                    child: Center(
-                        child: Text("Pencarian tidak ditemukan.")
-                    ),
+                    child: Center(child: Text("Pencarian tidak ditemukan.")),
                   ),
                 );
-              }else{
+              } else {
                 return Expanded(
                   child: ListView.builder(
-                    keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+                    keyboardDismissBehavior:
+                        ScrollViewKeyboardDismissBehavior.onDrag,
                     // physics: const NeverScrollableScrollPhysics(),
                     itemCount: controller.searchResultPegawai.length,
                     shrinkWrap: true,
@@ -117,91 +108,107 @@ class _cariPegawaiBody extends GetView<CariPegawaiController> {
                         child: Container(
                           padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                           child: Theme(
-                            data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+                            data: Theme.of(context)
+                                .copyWith(dividerColor: Colors.transparent),
                             child: ExpansionTile(
-
                               leading: ClipOval(
                                 child: CachedNetworkImage(
-                                  imageUrl: "${controller.searchResultPegawai[index].photo}",
-                                  height: 50, width: 50,
+                                  imageUrl:
+                                      "${controller.searchResultPegawai[index].photo}",
+                                  height: 50,
+                                  width: 50,
                                   fit: BoxFit.cover,
-                                  errorWidget: (context, url, error) => Container(color: Colors.grey.shade100,),
+                                  errorWidget: (context, url, error) =>
+                                      Container(
+                                    color: Colors.grey.shade100,
+                                  ),
                                 ),
                               ),
-                              title: AutoSizeText("${controller.searchResultPegawai[index].nama}".trim(), overflow: TextOverflow.ellipsis,),
-                              subtitle: AutoSizeText("${controller.searchResultPegawai[index].nip18}".trim(), overflow: TextOverflow.ellipsis,),
+                              title: AutoSizeText(
+                                "${controller.searchResultPegawai[index].nama}"
+                                    .trim(),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              subtitle: AutoSizeText(
+                                "${controller.searchResultPegawai[index].nip18}"
+                                    .trim(),
+                                overflow: TextOverflow.ellipsis,
+                              ),
                               children: [
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text("Pangkat/Golongan :"),
-                                          Spacer(flex: 1,),
+                                          Spacer(
+                                            flex: 1,
+                                          ),
                                           Expanded(
                                               flex: 3,
                                               child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.end,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
                                                 children: [
-                                                  AutoSizeText("${controller.searchResultPegawai[index].kodeGolonganRuang}"),
+                                                  AutoSizeText(
+                                                      "${controller.searchResultPegawai[index].kodeGolonganRuang}"),
                                                 ],
-                                              )
-                                          )
-                                        ]
-                                    ),
+                                              ))
+                                        ]),
                                     Row(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
                                         children: [
                                           Text("Jabatan :"),
-                                          Spacer(flex: 1,),
+                                          Spacer(
+                                            flex: 1,
+                                          ),
                                           Expanded(
                                             flex: 3,
-                                            child:
-                                            AutoSizeText("${controller.searchResultPegawai[index].jabatan}", textAlign: TextAlign.end,),
+                                            child: AutoSizeText(
+                                              "${controller.searchResultPegawai[index].jabatan}",
+                                              textAlign: TextAlign.end,
+                                            ),
                                           )
-
-
-                                        ]
-
-                                    ),
+                                        ]),
                                     Row(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
                                         children: [
                                           Text("Unit :"),
-                                          Spacer(flex: 1,),
+                                          Spacer(
+                                            flex: 1,
+                                          ),
                                           Expanded(
                                             flex: 3,
-                                            child:
-                                            AutoSizeText("${controller.searchResultPegawai[index].organisasi}", textAlign: TextAlign.end,),
+                                            child: AutoSizeText(
+                                              "${controller.searchResultPegawai[index].organisasi}",
+                                              textAlign: TextAlign.end,
+                                            ),
                                           )
-
-
-                                        ]
-
-                                    ),
+                                        ]),
                                   ],
                                 )
-
                               ],
-                              expandedCrossAxisAlignment: CrossAxisAlignment.stretch,
+                              expandedCrossAxisAlignment:
+                                  CrossAxisAlignment.stretch,
                               tilePadding: EdgeInsets.zero,
-
                             ),
                           ),
                         ),
                       );
                     },
                   ),
-
                 );
               }
             }
-
-          }
-          ),
+          }),
         ],
       ),
     );
@@ -209,7 +216,6 @@ class _cariPegawaiBody extends GetView<CariPegawaiController> {
 }
 
 class _cariOrgBody extends GetView<CariPegawaiController> {
-
   @override
   Widget build(BuildContext context) {
     Get.put(CariPegawaiController("org"), tag: "org");
@@ -221,7 +227,6 @@ class _cariOrgBody extends GetView<CariPegawaiController> {
     TextEditingController tc = TextEditingController();
     return Container(
       child: Column(
-
         children: [
           TextField(
             controller: tc,
@@ -238,71 +243,78 @@ class _cariOrgBody extends GetView<CariPegawaiController> {
             ),
           ),
           Obx(() {
-            if(controller.isLoading.value == true){
+            if (controller.isLoading.value == true) {
               return Expanded(
                 child: Container(
-                  child: Center(
-                      child: Loading()
-                  ),
+                  child: Center(child: Loading()),
                 ),
               );
-            }else{
-              if(controller.isSearched.value && controller.searchResultOrg.length == 0){
+            } else {
+              if (controller.isSearched.value &&
+                  controller.searchResultOrg.length == 0) {
                 return Expanded(
                   child: Container(
-                    child: Center(
-                        child: Text("Pencarian tidak ditemukan.")
-                    ),
+                    child: Center(child: Text("Pencarian tidak ditemukan.")),
                   ),
                 );
-              }else{
+              } else {
                 return Expanded(
                   child: ListView.builder(
-                    keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+                    keyboardDismissBehavior:
+                        ScrollViewKeyboardDismissBehavior.onDrag,
                     // physics: const NeverScrollableScrollPhysics(),
                     itemCount: controller.searchResultOrg.length,
                     shrinkWrap: true,
                     itemBuilder: (BuildContext context, int index) {
                       return EKemenkeuCard(
                         child: Container(
-
                           padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                           child: Theme(
-
-                            data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+                            data: Theme.of(context)
+                                .copyWith(dividerColor: Colors.transparent),
                             child: ExpansionTile(
-                              title: Text("${controller.searchResultOrg[index].namaOrganisasi}"),
-                              subtitle: Text("${controller.searchResultOrg[index].namaPejabat}"),
+                              title: Text(
+                                  "${controller.searchResultOrg[index].namaOrganisasi}"),
+                              subtitle: Text(
+                                  "${controller.searchResultOrg[index].namaPejabat}"),
                               children: [
                                 Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       Text("Uraian :"),
-                                      Spacer(flex: 1,),
+                                      Spacer(
+                                        flex: 1,
+                                      ),
                                       Expanded(
                                         flex: 3,
-                                        child:
-                                        AutoSizeText("${controller.searchResultOrg[index].uraianLengkap}", textAlign: TextAlign.end,),
+                                        child: AutoSizeText(
+                                          "${controller.searchResultOrg[index].uraianLengkap}",
+                                          textAlign: TextAlign.end,
+                                        ),
                                       )
-                                    ]
-                                ),
+                                    ]),
                                 Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       Text("Alamat :"),
-                                      Spacer(flex: 1,),
+                                      Spacer(
+                                        flex: 1,
+                                      ),
                                       Expanded(
                                         flex: 3,
-                                        child:
-                                        AutoSizeText("${controller.searchResultOrg[index].alamat}", textAlign: TextAlign.end,),
+                                        child: AutoSizeText(
+                                          "${controller.searchResultOrg[index].alamat}",
+                                          textAlign: TextAlign.end,
+                                        ),
                                       )
-                                    ]
-                                ),
+                                    ]),
                               ],
-
-                              expandedCrossAxisAlignment: CrossAxisAlignment.stretch,
+                              expandedCrossAxisAlignment:
+                                  CrossAxisAlignment.stretch,
                               tilePadding: EdgeInsets.zero,
                             ),
                           ),
@@ -312,11 +324,8 @@ class _cariOrgBody extends GetView<CariPegawaiController> {
                   ),
                 );
               }
-
             }
-
-          }
-          ),
+          }),
         ],
       ),
     );

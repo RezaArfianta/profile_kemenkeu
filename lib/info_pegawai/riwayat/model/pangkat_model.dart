@@ -1,56 +1,56 @@
 class Pangkat {
-  int idpegawaiPangkat;
-  int idpegawai;
-  int idrefPangkat;
-  String tanggalMulai;
-  String tanggalSelesai;
-  int masaKerjaTahun;
-  int masaKerjaBulan;
-  String noSk;
-  String tanggalSk;
-  String penerbitSk;
-  String noNotaBkn;
-  String tanggalNotaBkn;
-  int idrefValiditas;
-  String lampiran;
-  String createdDate;
-  String aktif;
-  int createdBy;
-  String idlama;
-  String pangkat;
-  String golongan;
-  String organisasi;
-  String esl1;
-  String uraianStatusValiditas;
-  String hrRefPangkat;
-  int idrefValiditasNavigation;
+  int? idpegawaiPangkat;
+  int? idpegawai;
+  int? idrefPangkat;
+  String? tanggalMulai;
+  String? tanggalSelesai;
+  int? masaKerjaTahun;
+  int? masaKerjaBulan;
+  String? noSk;
+  String? tanggalSk;
+  String? penerbitSk;
+  String? noNotaBkn;
+  String? tanggalNotaBkn;
+  int? idrefValiditas;
+  String? lampiran;
+  String? createdDate;
+  String? aktif;
+  int? createdBy;
+  String? idlama;
+  String? pangkat;
+  String? golongan;
+  String? organisasi;
+  String? esl1;
+  String? uraianStatusValiditas;
+  String? hrRefPangkat;
+  int? idrefValiditasNavigation;
 
   Pangkat(
       {this.idpegawaiPangkat,
-        this.idpegawai,
-        this.idrefPangkat,
-        this.tanggalMulai,
-        this.tanggalSelesai,
-        this.masaKerjaTahun,
-        this.masaKerjaBulan,
-        this.noSk,
-        this.tanggalSk,
-        this.penerbitSk,
-        this.noNotaBkn,
-        this.tanggalNotaBkn,
-        this.idrefValiditas,
-        this.lampiran,
-        this.createdDate,
-        this.aktif,
-        this.createdBy,
-        this.idlama,
-        this.pangkat,
-        this.golongan,
-        this.organisasi,
-        this.esl1,
-        this.uraianStatusValiditas,
-        this.hrRefPangkat,
-        this.idrefValiditasNavigation});
+      this.idpegawai,
+      this.idrefPangkat,
+      this.tanggalMulai,
+      this.tanggalSelesai,
+      this.masaKerjaTahun,
+      this.masaKerjaBulan,
+      this.noSk,
+      this.tanggalSk,
+      this.penerbitSk,
+      this.noNotaBkn,
+      this.tanggalNotaBkn,
+      this.idrefValiditas,
+      this.lampiran,
+      this.createdDate,
+      this.aktif,
+      this.createdBy,
+      this.idlama,
+      this.pangkat,
+      this.golongan,
+      this.organisasi,
+      this.esl1,
+      this.uraianStatusValiditas,
+      this.hrRefPangkat,
+      this.idrefValiditasNavigation});
 
   Pangkat.fromJson(Map<String, dynamic> json) {
     idpegawaiPangkat = json['IdpegawaiPangkat'];

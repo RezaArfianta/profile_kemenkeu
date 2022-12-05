@@ -1,22 +1,24 @@
-import 'package:ekemenkeu/app/repository/ekemenkeu_repository.dart';
-import 'package:ekemenkeu/module/info_pegawai/data_pokok/model/data_pokok_model.dart';
-import 'package:ekemenkeu/module/info_pegawai/data_pokok/model/data_pokok_repository.dart';
 import 'package:get/get.dart';
+import 'package:profilekemenkeu/info_pegawai/data_pokok/screen/data_pokok_page.dart';
 
-class DataPokokController extends GetxController{
-  var dataPokok = DataPokok().obs;
+import '../../../app/repository/ekemenkeu_repository.dart';
+import '../model/data_pokok_model.dart';
+import '../model/data_pokok_repository.dart';
+
+class DataPokokController extends GetxController {
+  var dataPokok = <DataPokok>[].obs;
   var isLoading = false.obs;
   var isError = false.obs;
   var repo = DataPokokRepository(EKemenkeuRepository());
 
-  void fetch() async {
+  Future<void> fetch() async {
     // var sr = await
 
     isLoading.value = true;
-    try{
+    try {
       dataPokok.value = await repo.getDataPokok();
       isError.value = false;
-    }catch (error){
+    } catch (error) {
       isError.value = true;
     }
     isLoading.value = false;
@@ -32,6 +34,4 @@ class DataPokokController extends GetxController{
   void onClose() {
     super.onClose();
   }
-
 }
-
