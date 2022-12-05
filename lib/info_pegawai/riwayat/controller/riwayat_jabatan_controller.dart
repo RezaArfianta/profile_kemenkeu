@@ -14,7 +14,7 @@ class RiwayatJabatanController extends GetxController {
   void fetch() async {
     // var sr = await
     isLoading.value = true;
-    listPangkat.value = await repo.getRiwayatJabatan();
+    listPangkat.value = (await repo.getRiwayatJabatan())!;
     isLoading.value = false;
   }
 

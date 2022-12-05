@@ -13,12 +13,16 @@ class RiwayatDiklatController extends GetxController {
   var isLoading = false.obs;
   var repo = RiwayatRepository(EKemenkeuRepository());
 
+  var nipPegawai = EKemenkeuStorage.local!.getString("nip-pegawai") as String;
+
   void fetch() async {
     // var sr = await
     isLoading.value = true;
-    listDiklat.value = await repo
-        .getRiwayatDiklat(EKemenkeuStorage.local!.getString("nip-pegawai"));
+    listDiklat.value = (await repo.getRiwayatDiklat(nipPegawai))!;
     isLoading.value = false;
+
+    // (await repo
+    //     .getRiwayatDiklat(EKemenkeuStorage.local!.getString("nip-pegawai")))!;
   }
 
   @override

@@ -6,7 +6,7 @@ import 'package:dio/dio.dart';
 
 class EkemenkeuInterceptor extends InterceptorsWrapper {
   Dio dio;
-  int retryCounter;
+  int? retryCounter;
 
   EkemenkeuInterceptor(this.dio) {
     retryCounter = 0;

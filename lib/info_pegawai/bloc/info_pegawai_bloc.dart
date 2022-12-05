@@ -26,9 +26,9 @@ class InfoPegawaiBloc extends Bloc<InfoPegawaiEvent, InfoPegawaiState> {
   ) async* {
     if (event is InfoLoadPegawai) {
       yield InfoPegawaiLoading();
-      List<Pegawai> pegawai =
+      List<Pegawai>? pegawai =
           await repository.getInfoPegawai(key, limit, kdOrg);
-      yield InfoPegawaiSuccess(pegawai: pegawai);
+      yield InfoPegawaiSuccess(pegawai: pegawai!);
     }
   }
 }

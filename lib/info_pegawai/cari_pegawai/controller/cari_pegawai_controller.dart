@@ -19,9 +19,9 @@ class CariPegawaiController extends GetxController {
     isSearched.value = true;
     isLoading.value = true;
     if (this.mode == "peg") {
-      searchResultPegawai.value = await repo.getInfoPegawai(key, 0, "35");
+      searchResultPegawai.value = (await repo.getInfoPegawai(key, 0, "35"))!;
     } else {
-      searchResultOrg.value = await repo.getOrganisasi(key);
+      searchResultOrg.value = (await repo.getOrganisasi(key))!;
     }
     isLoading.value = false;
   }

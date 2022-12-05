@@ -255,7 +255,7 @@ class RiwayatPangkatBody extends GetView<RiwayatPangkatController> {
                   ),
                 ));
               }),
-          onRefresh: () {
+          onRefresh: () async {
             controller.fetch();
           },
         );
@@ -452,7 +452,7 @@ class RiwayatJabatanBody extends GetView<RiwayatJabatanController> {
                   ),
                 ));
               }),
-          onRefresh: () {
+          onRefresh: () async {
             controller.fetch();
           },
         );

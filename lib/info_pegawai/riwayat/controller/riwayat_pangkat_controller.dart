@@ -13,13 +13,14 @@ class RiwayatPangkatController extends GetxController {
   var repo = RiwayatRepository(EKemenkeuRepository());
   var isError = false.obs;
 
+  var nipPegawai = EKemenkeuStorage.local!.getString("nip-pegawai") as String;
+
   void fetch() async {
     // var sr = await
     isError.value = false;
     isLoading.value = true;
     try {
-      listPangkat.value = await repo
-          .getRiwayatPangkat(EKemenkeuStorage.local.getString("nip-pegawai"));
+      listPangkat.value = (await repo.getRiwayatPangkat(nipPegawai))!;
       if (listPangkat.value == null) {
         isError.value = true;
       }
