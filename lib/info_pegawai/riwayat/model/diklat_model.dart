@@ -66,37 +66,60 @@ class Diklat {
   });
 
   Diklat.fromJson(Map<String, dynamic> json) {
-    idpegawaiDiklat = json['IdpegawaiDiklat'];
-    idpegawai = json['Idpegawai'];
-    idrefJenisDiklat = json['IdrefJenisDiklat'];
-    tanggalDiklat = json['TanggalDiklat'];
-    tahunDiklat = json['TahunDiklat'];
-    namaDiklat = json['NamaDiklat'];
-    noSertifikat = json['NoSertifikat'];
-    institusiPenyelenggara = json['InstitusiPenyelenggara'];
-    namaInstansi = json['NamaInstansi'];
-    kompetensi = json['Kompetensi'];
-    lampiran = json['Lampiran'];
-    createdDate = json['CreatedDate'];
-    aktif = json['Aktif'];
-    idrefStatusData = json['IdrefStatusData'];
-    idrefValiditas = json['IdrefValiditas'];
-    createdBy = json['CreatedBy'];
-    idlama = json['Idlama'];
-    jamlat = json['Jamlat'];
-    tanggalSertifikat = json['TanggalSertifikat'];
-    linkSertifikat = json['LinkSertifikat'];
-    subjenisDiklat = json['SubjenisDiklat'];
-    tanggalSelesaiDiklat = json['TanggalSelesaiDiklat'];
-    rumpunDiklat = json['RumpunDiklat'];
-    idrefDiklatSemantik = json['IdrefDiklatSemantik'];
-    idCourse = json['IdCourse'];
-    batch = json['Batch'];
-    klasifikasiDiklat = json['KlasifikasiDiklat'];
-    uraianStatusValiditas = json['UraianStatusValiditas'];
-    createdByNavigation = json['CreatedByNavigation'];
-    idlamaNavigation = json['IdlamaNavigation'];
-    idrefValiditasNavigation = json['IdrefValiditasNavigation'];
+    idpegawaiDiklat =
+        json['IdpegawaiDiklat'] == null ? null : json['IdpegawaiDiklat'];
+    idpegawai = json['Idpegawai'] == null ? null : json['Idpegawai'];
+    idrefJenisDiklat = json['IdrefJenisDiklatIdpegawai'] == null
+        ? null
+        : json['IdrefJenisDiklatIdpegawai'];
+    tanggalDiklat =
+        json['TanggalDiklat'] == null ? null : json['TanggalDiklat'];
+    tahunDiklat = json['TahunDiklat'] == null ? null : json['TahunDiklat'];
+    namaDiklat = json['NamaDiklat'] == null ? null : json['NamaDiklat'];
+    noSertifikat = json['NoSertifikat'] == null ? null : json['NoSertifikat'];
+    institusiPenyelenggara = json['InstitusiPenyelenggara'] == null
+        ? null
+        : json['InstitusiPenyelenggara'];
+    namaInstansi = json['NamaInstansi'] == null ? null : json['NamaInstansi'];
+    kompetensi = json['Kompetensi'] == null ? null : json['Kompetensi'];
+    lampiran = json['Lampiran'] == null ? null : json['Lampiran'];
+    createdDate = json['CreatedDate'] == null ? null : json['CreatedDate'];
+    aktif = json['Aktif'] == null ? null : json['Aktif'];
+    idrefStatusData =
+        json['IdrefStatusData'] == null ? null : json['IdrefStatusData'];
+    idrefValiditas =
+        json['IdrefValiditas'] == null ? null : json['IdrefValiditas'];
+    createdBy = json['CreatedBy'] == null ? null : json['CreatedBy'];
+    idlama = json['Idlama'] == null ? null : json['Idlama'];
+    jamlat = json['Jamlat'] == null ? null : json['Jamlat'];
+    tanggalSertifikat =
+        json['TanggalSertifikat'] == null ? null : json['TanggalSertifikat'];
+    linkSertifikat =
+        json['LinkSertifikat'] == null ? null : json['LinkSertifikat'];
+    subjenisDiklat =
+        json['SubjenisDiklat'] == null ? null : json['SubjenisDiklat'];
+    tanggalSelesaiDiklat = json['TanggalSelesaiDiklat'] == null
+        ? null
+        : json['TanggalSelesaiDiklat'];
+    rumpunDiklat = json['RumpunDiklat'] == null ? null : json['RumpunDiklat'];
+    idrefDiklatSemantik = json['IdrefDiklatSemantik'] == null
+        ? null
+        : json['IdrefDiklatSemantik'];
+    idCourse = json['IdCourse'] == null ? null : json['IdCourse'];
+    batch = json['Batch'] == null ? null : json['Batch'];
+    klasifikasiDiklat =
+        json['KlasifikasiDiklat'] == null ? null : json['KlasifikasiDiklat'];
+    uraianStatusValiditas = json['UraianStatusValiditas'] == null
+        ? null
+        : json['UraianStatusValiditas'];
+    createdByNavigation = json['CreatedByNavigation'] == null
+        ? null
+        : json['CreatedByNavigation'];
+    idlamaNavigation =
+        json['IdlamaNavigation'] == null ? null : json['IdlamaNavigation'];
+    idrefValiditasNavigation = json['IdrefValiditasNavigation'] == null
+        ? null
+        : json['IdrefValiditasNavigation'];
   }
 
   Map<String, dynamic> toJson() {

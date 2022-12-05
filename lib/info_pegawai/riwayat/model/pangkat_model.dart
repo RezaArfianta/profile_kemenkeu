@@ -26,58 +26,68 @@ class Pangkat {
   int? idrefValiditasNavigation;
 
   Pangkat(
-      {this.idpegawaiPangkat,
-      this.idpegawai,
-      this.idrefPangkat,
-      this.tanggalMulai,
-      this.tanggalSelesai,
-      this.masaKerjaTahun,
-      this.masaKerjaBulan,
-      this.noSk,
-      this.tanggalSk,
-      this.penerbitSk,
-      this.noNotaBkn,
-      this.tanggalNotaBkn,
-      this.idrefValiditas,
-      this.lampiran,
-      this.createdDate,
-      this.aktif,
-      this.createdBy,
-      this.idlama,
-      this.pangkat,
-      this.golongan,
-      this.organisasi,
-      this.esl1,
-      this.uraianStatusValiditas,
-      this.hrRefPangkat,
-      this.idrefValiditasNavigation});
+      {required this.idpegawaiPangkat,
+      required this.idpegawai,
+      required this.idrefPangkat,
+      required this.tanggalMulai,
+      required this.tanggalSelesai,
+      required this.masaKerjaTahun,
+      required this.masaKerjaBulan,
+      required this.noSk,
+      required this.tanggalSk,
+      required this.penerbitSk,
+      required this.noNotaBkn,
+      required this.tanggalNotaBkn,
+      required this.idrefValiditas,
+      required this.lampiran,
+      required this.createdDate,
+      required this.aktif,
+      required this.createdBy,
+      required this.idlama,
+      required this.pangkat,
+      required this.golongan,
+      required this.organisasi,
+      required this.esl1,
+      required this.uraianStatusValiditas,
+      required this.hrRefPangkat,
+      required this.idrefValiditasNavigation});
 
   Pangkat.fromJson(Map<String, dynamic> json) {
-    idpegawaiPangkat = json['IdpegawaiPangkat'];
-    idpegawai = json['Idpegawai'];
-    idrefPangkat = json['IdrefPangkat'];
-    tanggalMulai = json['TanggalMulai'];
-    tanggalSelesai = json['TanggalSelesai'];
-    masaKerjaTahun = json['MasaKerjaTahun'];
-    masaKerjaBulan = json['MasaKerjaBulan'];
-    noSk = json['NoSk'];
-    tanggalSk = json['TanggalSk'];
-    penerbitSk = json['PenerbitSk'];
-    noNotaBkn = json['NoNotaBkn'];
-    tanggalNotaBkn = json['TanggalNotaBkn'];
-    idrefValiditas = json['IdrefValiditas'];
-    lampiran = json['Lampiran'];
-    createdDate = json['CreatedDate'];
-    aktif = json['Aktif'];
-    createdBy = json['CreatedBy'];
-    idlama = json['Idlama'];
-    pangkat = json['Pangkat'];
-    golongan = json['Golongan'];
-    organisasi = json['Organisasi'];
-    esl1 = json['Esl1'];
-    uraianStatusValiditas = json['UraianStatusValiditas'];
-    hrRefPangkat = json['HrRefPangkat'];
-    idrefValiditasNavigation = json['IdrefValiditasNavigation'];
+    idpegawaiPangkat =
+        json['IdpegawaiPangkat'] == null ? null : json['IdpegawaiPangkat'];
+    idpegawai = json['Idpegawai'] == null ? null : json['Idpegawai'];
+    idrefPangkat = json['IdrefPangkat'] == null ? null : json['IdrefPangkat'];
+    tanggalMulai = json['TanggalMulai'] == null ? null : json['TanggalMulai'];
+    tanggalSelesai =
+        json['TanggalSelesai'] == null ? null : json['TanggalSelesai'];
+    masaKerjaTahun =
+        json['MasaKerjaTahun'] == null ? null : json['MasaKerjaTahun'];
+    masaKerjaBulan =
+        json['MasaKerjaBulan'] == null ? null : json['MasaKerjaBulan'];
+    noSk = json['NoSk'] == null ? null : json['NoSk'];
+    tanggalSk = json['TanggalSk'] == null ? null : json['TanggalSk'];
+    penerbitSk = json['PenerbitSk'] == null ? null : json['PenerbitSk'];
+    noNotaBkn = json['NoNotaBkn'] == null ? null : json['NoNotaBkn'];
+    tanggalNotaBkn =
+        json['TanggalNotaBkn'] == null ? null : json['TanggalNotaBkn'];
+    idrefValiditas =
+        json['IdrefValiditas'] == null ? null : json['IdrefValiditas'];
+    lampiran = json['Lampiran'] == null ? null : json['Lampiran'];
+    createdDate = json['CreatedDate'] == null ? null : json['CreatedDate'];
+    aktif = json['Aktif'] == null ? null : json['Aktif'];
+    createdBy = json['CreatedBy'] == null ? null : json['CreatedBy'];
+    idlama = json['Idlama'] == null ? null : json['Idlama'];
+    pangkat = json['Pangkat'] == null ? null : json['Pangkat'];
+    golongan = json['Golongan'] == null ? null : json['Golongan'];
+    organisasi = json['Organisasi'] == null ? null : json['Organisasi'];
+    esl1 = json['Esl1'] == null ? null : json['Esl1'];
+    uraianStatusValiditas = json['UraianStatusValiditas'] == null
+        ? null
+        : json['UraianStatusValiditas'];
+    hrRefPangkat = json['HrRefPangkat'] == null ? null : json['HrRefPangkat'];
+    idrefValiditasNavigation = json['IdrefValiditasNavigation'] == null
+        ? null
+        : json['IdrefValiditasNavigation'];
   }
 
   Map<String, dynamic> toJson() {

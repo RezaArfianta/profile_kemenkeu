@@ -32,70 +32,90 @@ class Jabatan {
   int? idrefValiditasNavigation;
 
   Jabatan(
-      {this.idpegawaiJabatan,
-      this.idpegawai,
-      this.idjabatan,
-      this.idjabatanAtasan,
-      this.tanggalMulai,
-      this.tanggalSelesai,
-      this.noSk,
-      this.tanggalSk,
-      this.idrefStatusJabatan,
-      this.tanggalPelantikan,
-      this.lampiran,
-      this.idrefValiditas,
-      this.createdDate,
-      this.aktif,
-      this.createdBy,
-      this.idrefStatusData,
-      this.idlama,
-      this.jenisJabatan,
-      this.jabatan,
-      this.unit,
-      this.statusJabatan,
-      this.jabatanAtasan,
-      this.organisasi,
-      this.kodeOrganisasi,
-      this.uraianStatusValiditas,
-      this.esl1,
-      this.idjabatanAtasanNavigation,
-      this.idjabatanNavigation,
-      this.idlamaNavigation,
-      this.idrefStatusJabatanNavigation,
-      this.idrefValiditasNavigation});
+      {required this.idpegawaiJabatan,
+      required this.idpegawai,
+      required this.idjabatan,
+      required this.idjabatanAtasan,
+      required this.tanggalMulai,
+      required this.tanggalSelesai,
+      required this.noSk,
+      required this.tanggalSk,
+      required this.idrefStatusJabatan,
+      required this.tanggalPelantikan,
+      required this.lampiran,
+      required this.idrefValiditas,
+      required this.createdDate,
+      required this.aktif,
+      required this.createdBy,
+      required this.idrefStatusData,
+      required this.idlama,
+      required this.jenisJabatan,
+      required this.jabatan,
+      required this.unit,
+      required this.statusJabatan,
+      required this.jabatanAtasan,
+      required this.organisasi,
+      required this.kodeOrganisasi,
+      required this.uraianStatusValiditas,
+      required this.esl1,
+      required this.idjabatanAtasanNavigation,
+      required this.idjabatanNavigation,
+      required this.idlamaNavigation,
+      required this.idrefStatusJabatanNavigation,
+      required this.idrefValiditasNavigation});
 
   Jabatan.fromJson(Map<String, dynamic> json) {
-    idpegawaiJabatan = json['IdpegawaiJabatan'];
-    idpegawai = json['Idpegawai'];
-    idjabatan = json['Idjabatan'];
-    idjabatanAtasan = json['IdjabatanAtasan'];
-    tanggalMulai = json['TanggalMulai'];
-    tanggalSelesai = json['TanggalSelesai'];
-    noSk = json['NoSk'];
-    tanggalSk = json['TanggalSk'];
-    idrefStatusJabatan = json['IdrefStatusJabatan'];
-    tanggalPelantikan = json['TanggalPelantikan'];
-    lampiran = json['Lampiran'];
-    idrefValiditas = json['IdrefValiditas'];
-    createdDate = json['CreatedDate'];
-    aktif = json['Aktif'];
-    createdBy = json['CreatedBy'];
-    idrefStatusData = json['IdrefStatusData'];
-    idlama = json['Idlama'];
-    jenisJabatan = json['JenisJabatan'];
-    jabatan = json['Jabatan'];
-    unit = json['Unit'];
-    statusJabatan = json['StatusJabatan'];
-    jabatanAtasan = json['JabatanAtasan'];
-    organisasi = json['Organisasi'];
-    kodeOrganisasi = json['KodeOrganisasi'];
-    uraianStatusValiditas = json['UraianStatusValiditas'];
-    esl1 = json['Esl1'];
-    idjabatanAtasanNavigation = json['IdjabatanAtasanNavigation'];
-    idjabatanNavigation = json['IdjabatanNavigation'];
-    idlamaNavigation = json['IdlamaNavigation'];
-    idrefStatusJabatanNavigation = json['IdrefStatusJabatanNavigation'];
-    idrefValiditasNavigation = json['IdrefValiditasNavigation'];
+    idpegawaiJabatan =
+        json['IdpegawaiJabatan'] == null ? null : json['IdpegawaiJabatan'];
+    idpegawai = json['Idpegawai'] == null ? null : json['Idpegawai'];
+    idjabatan = json['Idjabatan'] == null ? null : json['Idjabatan'];
+    idjabatanAtasan =
+        json['IdjabatanAtasan'] == null ? null : json['IdjabatanAtasan'];
+    tanggalMulai = json['TanggalMulai'] == null ? null : json['TanggalMulai'];
+    tanggalSelesai =
+        json['TanggalSelesai'] == null ? null : json['TanggalSelesai'];
+    noSk = json['NoSk'] == null ? null : json['NoSk'];
+    tanggalSk = json['TanggalSk'] == null ? null : json['TanggalSk'];
+    idrefStatusJabatan =
+        json['IdrefStatusJabatan'] == null ? null : json['IdrefStatusJabatan'];
+    tanggalPelantikan =
+        json['TanggalPelantikan'] == null ? null : json['TanggalPelantikan'];
+    lampiran = json['Lampiran'] == null ? null : json['Lampiran'];
+    idrefValiditas =
+        json['IdrefValiditas'] == null ? null : json['IdrefValiditas'];
+    createdDate = json['CreatedDate'] == null ? null : json['CreatedDate'];
+    aktif = json['Aktif'] == null ? null : json['Aktif'];
+    createdBy = json['CreatedBy'] == null ? null : json['CreatedBy'];
+    idrefStatusData =
+        json['IdrefStatusData'] == null ? null : json['IdrefStatusData'];
+    idlama = json['Idlama'] == null ? null : json['Idlama'];
+    jenisJabatan = json['JenisJabatan'] == null ? null : json['JenisJabatan'];
+    jabatan = json['Jabatan'] == null ? null : json['Jabatan'];
+    unit = json['Unit'] == null ? null : json['Unit'];
+    statusJabatan =
+        json['StatusJabatan'] == null ? null : json['StatusJabatan'];
+    jabatanAtasan =
+        json['JabatanAtasan'] == null ? null : json['JabatanAtasan'];
+    organisasi = json['Organisasi'] == null ? null : json['Organisasi'];
+    kodeOrganisasi =
+        json['KodeOrganisasi'] == null ? null : json['KodeOrganisasi'];
+    uraianStatusValiditas =
+        json['UraianStatusValiditas'] == null ? null : json['IdpegawaiJabatan'];
+    esl1 = json['Esl1'] == null ? null : json['Esl1'];
+    idjabatanAtasanNavigation = json['IdjabatanAtasanNavigation'] == null
+        ? null
+        : json['IdjabatanAtasanNavigation'];
+    idjabatanNavigation = json['IdjabatanNavigation'] == null
+        ? null
+        : json['IdjabatanNavigation'];
+    idlamaNavigation =
+        json['IdlamaNavigation'] == null ? null : json['IdlamaNavigation'];
+    idrefStatusJabatanNavigation = json['IdrefStatusJabatanNavigation'] == null
+        ? null
+        : json['IdrefStatusJabatanNavigation'];
+    idrefValiditasNavigation = json['IdrefValiditasNavigation'] == null
+        ? null
+        : json['IdrefValiditasNavigation'];
   }
 
   Map<String, dynamic> toJson() {
