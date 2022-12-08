@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
 
+
 class DataPokokPage extends StatelessWidget {
   const DataPokokPage();
 
@@ -58,9 +59,12 @@ class _DataPokokBody extends GetView<DataPokokController> {
         return SingleChildScrollView(
           padding: EdgeInsets.all(16),
           child: Column(
-            children: [
+            
+            itemCount: controller.dataPokok.value.length,
+            itemBuilder: (BuildContext context, int index)
+            {children: 
               _kolomDatatPokok(
-                  "NIP", controller.dataPokok.value.nip18 ?? "-", 0),
+                  "NIP", "${controller.dataPokok[index].nip18}" ?? "-", 0),
               _kolomDatatPokok(
                   "Nama", controller.dataPokok.value.nama ?? "-", 1),
               _kolomDatatPokok(
@@ -106,7 +110,7 @@ class _DataPokokBody extends GetView<DataPokokController> {
                   controller.dataPokok.value.namaKontakDarurat ?? "-", 1),
               _kolomDatatPokok("Nomor Kontak Darurat",
                   controller.dataPokok.value.nomorKontakDarurat ?? "-", 0),
-            ],
+            },
           ),
         );
       }

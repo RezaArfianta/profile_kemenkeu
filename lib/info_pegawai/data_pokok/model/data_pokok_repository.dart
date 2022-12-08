@@ -14,12 +14,13 @@ class DataPokokRepository {
     repository = repository;
   }
 
-  Future<DataPokok?> getDataPokok() async {
+  Future<List<DataPokok>?> getDataPokok(String data) async {
     try {
       Response res =
           await repository!.dio.get('${ApiUrl.serviceUrl}/hris/profil/Pegawai');
       log(jsonEncode(res.data));
-      return DataPokok.fromJson(res.data["Data"]);
+      return List<DataPokok>.from(
+          res.data['Data'].map((i) => DataPokok.fromJson(i)));
     } on DioError catch (e) {
       print(e);
       return null;
