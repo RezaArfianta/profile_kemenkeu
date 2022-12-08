@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
 
-
 class DataPokokPage extends StatelessWidget {
   const DataPokokPage();
 
@@ -58,60 +57,143 @@ class _DataPokokBody extends GetView<DataPokokController> {
       } else {
         return SingleChildScrollView(
           padding: EdgeInsets.all(16),
-          child: Column(
-            
-            itemCount: controller.dataPokok.value.length,
-            itemBuilder: (BuildContext context, int index)
-            {children: 
-              _kolomDatatPokok(
-                  "NIP", "${controller.dataPokok[index].nip18}" ?? "-", 0),
-              _kolomDatatPokok(
-                  "Nama", controller.dataPokok.value.nama ?? "-", 1),
-              _kolomDatatPokok(
-                  "Tempat, Tanggal Lahir",
-                  "${controller.dataPokok.value.tempatLahir}, ${Jiffy(controller.dataPokok.value.tanggalLahir).yMMMMd}",
-                  0),
-              _kolomDatatPokok(
-                  "Jenis Kelamin",
-                  controller.dataPokok.value.jenisKelamin == "P"
-                      ? "Pria"
-                      : "Wanita",
-                  1),
-              _kolomDatatPokok(
-                  "Agama", controller.dataPokok.value.agama ?? "-", 0),
-              _kolomDatatPokok("Golongan Darah",
-                  controller.dataPokok.value.golonganDarah ?? "-", 1),
-              _kolomDatatPokok(
-                  "No. KK", controller.dataPokok.value.noKk ?? "-", 0),
-              _kolomDatatPokok("NIK", controller.dataPokok.value.nik ?? "-", 1),
-              _kolomDatatPokok(
-                  "NPWP", controller.dataPokok.value.npwp ?? "-", 0),
-              _kolomDatatPokok(
-                  "No. Telp", controller.dataPokok.value.noHp ?? "-", 1),
-              _kolomDatatPokok(
-                  "Email", controller.dataPokok.value.email ?? "-", 0),
-              _kolomDatatPokok("Provinsi KTP",
-                  controller.dataPokok.value.provinsiKtp ?? "-", 1),
-              _kolomDatatPokok(
-                  "Kota KTP", controller.dataPokok.value.kotaKtp ?? "-", 0),
-              _kolomDatatPokok(
-                  "Alamat KTP", controller.dataPokok.value.alamatKtp ?? "-", 1),
-              _kolomDatatPokok("Kode Pos KTP",
-                  controller.dataPokok.value.kodePosKtp ?? "-", 0),
-              _kolomDatatPokok("Provinsi Tempat Tinggal",
-                  controller.dataPokok.value.provinsiDomisili ?? "-", 1),
-              _kolomDatatPokok("Kota Tempat Tinggal",
-                  controller.dataPokok.value.kotaDomisili ?? "-", 0),
-              _kolomDatatPokok("Alamat Tempat Tinggal",
-                  controller.dataPokok.value.alamatDomisili ?? "-", 1),
-              _kolomDatatPokok("Kode Pos Tempat Tinggal",
-                  controller.dataPokok.value.kodePosDomisili ?? "-", 0),
-              _kolomDatatPokok("Nama Kontak Darurat",
-                  controller.dataPokok.value.namaKontakDarurat ?? "-", 1),
-              _kolomDatatPokok("Nomor Kontak Darurat",
-                  controller.dataPokok.value.nomorKontakDarurat ?? "-", 0),
-            },
-          ),
+          child: ListView.builder(
+              itemCount: controller.dataPokok.value.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Row(
+                  children: [
+                    _kolomDatatPokok(
+                        "NIP",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].nip18}"
+                            : "-",
+                        0),
+                    _kolomDatatPokok(
+                        "Nama",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].nama}"
+                            : "-",
+                        1),
+                    _kolomDatatPokok(
+                        "Tempat, Tanggal Lahir",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].tempatLahir}, ${Jiffy(controller.dataPokok[index].tanggalLahir).yMMMMd}"
+                            : "-",
+                        0),
+                    _kolomDatatPokok(
+                        "Jenis Kelamin",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].jenisKelamin}" ==
+                                    "P"
+                                ? "Pria"
+                                : "Wanita"
+                            : "-",
+                        1),
+                    _kolomDatatPokok(
+                        "Agama",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].agama}"
+                            : "-",
+                        0),
+                    _kolomDatatPokok(
+                        "Golongan Darah",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].golonganDarah}"
+                            : "-",
+                        1),
+                    _kolomDatatPokok(
+                        "No. KK",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].noKk}"
+                            : "-",
+                        0),
+                    _kolomDatatPokok(
+                        "NIK",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].nik}"
+                            : "-",
+                        1),
+                    _kolomDatatPokok(
+                        "NPWP",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].npwp}"
+                            : "-",
+                        0),
+                    _kolomDatatPokok(
+                        "No. Telp",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].noHp}"
+                            : "-",
+                        1),
+                    _kolomDatatPokok(
+                        "Email",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].email}"
+                            : "-",
+                        0),
+                    _kolomDatatPokok(
+                        "Provinsi KTP",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].provinsiKtp}"
+                            : "-",
+                        1),
+                    _kolomDatatPokok(
+                        "Kota KTP",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].kotaKtp}"
+                            : "-",
+                        0),
+                    _kolomDatatPokok(
+                        "Alamat KTP",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].alamatKtp}"
+                            : "-",
+                        1),
+                    _kolomDatatPokok(
+                        "Kode Pos KTP",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].kodePosKtp}"
+                            : "-",
+                        0),
+                    _kolomDatatPokok(
+                        "Provinsi Tempat Tinggal",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].provinsiDomisili}"
+                            : "-",
+                        1),
+                    _kolomDatatPokok(
+                        "Kota Tempat Tinggal",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].kotaDomisili}"
+                            : "-",
+                        0),
+                    _kolomDatatPokok(
+                        "Alamat Tempat Tinggal",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].alamatDomisili}"
+                            : "-",
+                        1),
+                    _kolomDatatPokok(
+                        "Kode Pos Tempat Tinggal",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].kodePosDomisili}"
+                            : "-",
+                        0),
+                    _kolomDatatPokok(
+                        "Nama Kontak Darurat",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].namaKontakDarurat}"
+                            : "-",
+                        1),
+                    _kolomDatatPokok(
+                        "Nomor Kontak Darurat",
+                        controller.dataPokok.value != null
+                            ? "${controller.dataPokok[index].nomorKontakDarurat}"
+                            : "-",
+                        0),
+                  ],
+                );
+              }),
         );
       }
     });
