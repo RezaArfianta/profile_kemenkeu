@@ -1,4 +1,5 @@
 import 'package:profilekemenkeu/app/repository/ekemenkeu_repository.dart';
+import 'package:profilekemenkeu/global/constant.dart';
 import 'package:profilekemenkeu/global/ekemenkeu_storage.dart';
 import 'package:profilekemenkeu/info_pegawai/data_pokok/model/data_pokok_model.dart';
 import 'package:profilekemenkeu/info_pegawai/data_pokok/model/data_pokok_repository.dart';
@@ -11,14 +12,15 @@ import 'package:get/get.dart';
 class RiwayatDiklatController extends GetxController {
   var listDiklat = <Diklat>[].obs;
   var isLoading = false.obs;
-  var repo = RiwayatRepository(EKemenkeuRepository());
+  var repo = RiwayatRepository();
 
-  var nipPegawai = EKemenkeuStorage.local!.getString("nip-pegawai") as String;
+  // String? nipPegawai = EKemenkeuStorage.local!.getString("nip-pegawai");
+  // String nipPegawai = Constant.nipPegawai;
 
   void fetch() async {
     // var sr = await
     isLoading.value = true;
-    listDiklat.value = (await repo.getRiwayatDiklat(nipPegawai))!;
+    listDiklat.value = (await repo.getRiwayatDiklat(Constant.nipPegawai))!;
     isLoading.value = false;
 
     // (await repo

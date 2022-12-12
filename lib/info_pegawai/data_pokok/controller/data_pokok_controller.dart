@@ -7,35 +7,45 @@ import '../model/data_pokok_model.dart';
 import '../model/data_pokok_repository.dart';
 
 class DataPokokController extends GetxController {
-  var dataPokok = <DataPokok>[].obs;
+  // var dataPokok = <DataPokok>[].obs;
   var isLoading = false.obs;
   var isError = false.obs;
-  var repo = DataPokokRepository(EKemenkeuRepository());
-  var data = EKemenkeuStorage.local!.getString('data') as String;
-
- void fetch() async {
-    // var sr = await
-
-    isLoading.value = true;
-    try {
-      dataPokok.value = (await repo.getDataPokok(data))!;
-      if (dataPokok.value == null) {
-        isError.value = true;
-      }
-      
-  }on Error catch (e) {
-        isError.value = true;
-      }
-      isLoading.value = false;
+  var dataPokok = Rxn<DataPokok>(null);
+  var repo = DataPokokRepository();
+  // var data = EKemenkeuStorage.local!.getString('data') as String;
 
   @override
   void onInit() {
-    super.onInit();
     fetch();
+    super.onInit();
   }
 
-  @override
-  void onClose() {
-    super.onClose();
+  void fetch() async {
+    // var sr = await
+    isError.value = false;
+    isLoading.value = true;
+    try {
+      dataPokok.value = await repo.getDataPokok();
+      // print(dataPokok.value);
+      if (dataPokok.value == null) {
+        isError.value = true;
+      }
+    } on Error catch (e) {
+      print("${e} errorzzz");
+      // print(dataPokok.value);
+      isError.value = true;
+    }
+    isLoading.value = false;
+
+    @override
+    void onInit() {
+      super.onInit();
+      fetch();
+    }
+
+    @override
+    void onClose() {
+      super.onClose();
+    }
   }
- }}
+}

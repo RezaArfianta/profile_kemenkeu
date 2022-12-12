@@ -11,15 +11,11 @@ import 'package:profilekemenkeu/info_pegawai/riwayat/model/pangkat_model.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RiwayatRepository {
-  EKemenkeuRepository? _repository;
-
-  RiwayatRepository(EKemenkeuRepository repository) {
-    _repository = repository;
-  }
+  EKemenkeuRepository _repository = EKemenkeuRepository();
 
   Future<List<Pangkat>?> getRiwayatPangkat(String nip) async {
     try {
-      Response res = await _repository!.dio.get(
+      Response res = await _repository.dio.get(
           '${ApiUrl.serviceUrl}/hris/pangkat/Riwayat/GetPangkatByNip/$nip');
       print('${ApiUrl.serviceUrl}/hris/pangkat/Riwayat/GetPangkatByNip/$nip');
       log(jsonEncode(res.data));
@@ -33,7 +29,7 @@ class RiwayatRepository {
 
   Future<List<Jabatan>?> getRiwayatJabatan() async {
     try {
-      Response res = await _repository!.dio.get(
+      Response res = await EKemenkeuRepository().dio.get(
           '${ApiUrl.serviceUrl}/hris/jabatan/Riwayat/GetJabatanByIdPegawai');
       log(jsonEncode(res.data));
       return List<Jabatan>.from(
@@ -46,7 +42,7 @@ class RiwayatRepository {
 
   Future<List<Diklat>?> getRiwayatDiklat(String nip) async {
     try {
-      Response res = await _repository!.dio
+      Response res = await _repository.dio
           .get('${ApiUrl.serviceUrl}/hris/diklat/Riwayat/GetByNip/$nip');
       log(jsonEncode(res.data));
       return List<Diklat>.from(res.data['Data'].map((i) => Diklat.fromJson(i)));

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import 'package:get/get.dart';
+import 'package:profilekemenkeu/info_pegawai/main/screen/info_pegawai_page.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await DotEnv.dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
@@ -39,7 +43,7 @@ class MyApp extends StatelessWidget {
       ),
       themeMode: ThemeMode.system,
       builder: EasyLoading.init(),
-      // home: ,
+      home: InfoPegawaiPage(),
     );
   }
 }

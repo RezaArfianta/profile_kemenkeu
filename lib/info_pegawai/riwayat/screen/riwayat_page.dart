@@ -279,183 +279,188 @@ class RiwayatJabatanBody extends GetView<RiwayatJabatanController> {
           ),
         );
       } else {
-        return RefreshIndicator(
-          child: ListView.builder(
-              itemCount: controller.listPangkat.value.length,
-              shrinkWrap: true,
-              itemBuilder: (BuildContext context, int index) {
-                return EKemenkeuCard(
-                    child: Theme(
-                  data: Theme.of(context)
-                      .copyWith(dividerColor: Colors.transparent),
-                  child: ExpansionTile(
-                    childrenPadding: EdgeInsets.fromLTRB(15, 0, 16, 0),
-                    title: Text("${controller.listPangkat[index].jabatan}"),
-                    subtitle: Row(children: [
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(5),
-                          child: Container(
-                            padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
-                            child: Text(
-                                "${controller.listPangkat[index].idrefValiditas == 4 ? "DISETUJUI (UPK)" : controller.listPangkat[index].idrefValiditas == 3 ? "DISETUJUI(Pusat)" : controller.listPangkat[index].idrefValiditas == 2 ? "DISETUJUI(Atasan)" : "PROSES"}",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 1),
-                            color:
-                                controller.listPangkat[index].idrefValiditas ==
-                                        4
-                                    ? Colors.green
-                                    : controller.listPangkat[index]
-                                                .idrefValiditas ==
-                                            3
-                                        ? Colors.green
-                                        : controller.listPangkat[index]
-                                                    .idrefValiditas ==
-                                                2
-                                            ? Colors.green
-                                            : Colors.orangeAccent,
-                          )),
-                      Spacer()
-                    ]),
-                    children: [
-                      Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text("Unit Organisasi:"),
-                            Spacer(
-                              flex: 1,
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child: AutoSizeText(
-                                "${controller.listPangkat[index].unit}",
-                                textAlign: TextAlign.end,
-                              ),
-                            )
-                          ]),
-                      Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text("Jabatan:"),
-                            Spacer(
-                              flex: 1,
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child: AutoSizeText(
-                                "${controller.listPangkat[index].jabatan}",
-                                textAlign: TextAlign.end,
-                              ),
-                            )
-                          ]),
-                      Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text("Jabatan Atasan:"),
-                            Spacer(
-                              flex: 1,
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child: AutoSizeText(
-                                "${controller.listPangkat[index].jabatanAtasan}",
-                                textAlign: TextAlign.end,
-                              ),
-                            )
-                          ]),
-                      Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text("Status Jabatan:"),
-                            Spacer(
-                              flex: 1,
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child: AutoSizeText(
-                                "${controller.listPangkat[index].statusJabatan}",
-                                textAlign: TextAlign.end,
-                              ),
-                            )
-                          ]),
-                      Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text("Nomor SK:"),
-                            Spacer(
-                              flex: 1,
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child: AutoSizeText(
-                                "${controller.listPangkat[index].noSk}",
-                                textAlign: TextAlign.end,
-                              ),
-                            )
-                          ]),
-                      Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text("Tanggal SK:"),
-                            Spacer(
-                              flex: 1,
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child: AutoSizeText(
-                                "${Jiffy(controller.listPangkat[index].tanggalSk).yMMMMd}",
-                                textAlign: TextAlign.end,
-                              ),
-                            )
-                          ]),
-                      Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text("Tanggal Pelantikan:"),
-                            Spacer(
-                              flex: 1,
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child: AutoSizeText(
-                                "${controller.listPangkat[index].tanggalPelantikan == null ? '-' : controller.listPangkat[index].tanggalPelantikan}",
-                                textAlign: TextAlign.end,
-                              ),
-                            )
-                          ]),
-                      Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text("TMT:"),
-                            Spacer(
-                              flex: 1,
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child: AutoSizeText(
-                                "${Jiffy(controller.listPangkat[index].tanggalMulai).yMMMMd}",
-                                textAlign: TextAlign.end,
-                              ),
-                            )
-                          ]),
-                    ],
-                  ),
-                ));
-              }),
-          onRefresh: () async {
-            controller.fetch();
-          },
+        return Container(
+          child: Text("LOLOLLOL"),
         );
+        // return RefreshIndicator(
+        //   child: ListView.builder(
+        //       itemCount: controller.listPangkat.value.length,
+        //       shrinkWrap: true,
+        //       itemBuilder: (BuildContext context, int index) {
+        //         return EKemenkeuCard(
+        //             child: Theme(
+        //           data: Theme.of(context)
+        //               .copyWith(dividerColor: Colors.transparent),
+        //           child: ExpansionTile(
+        //             childrenPadding: EdgeInsets.fromLTRB(15, 0, 16, 0),
+        //             title: Text("${controller.listPangkat[index].jabatan}"),
+        //             subtitle: Row(children: [
+        //               ClipRRect(
+        //                   borderRadius: BorderRadius.circular(5),
+        //                   child: Container(
+        //                     padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
+        //                     child: Text(
+        //                         // "${controller.listPangkat[index].idrefValiditas == 4 ? "DISETUJUI (UPK)" : controller.listPangkat[index].idrefValiditas == 3 ? "DISETUJUI(Pusat)" : controller.listPangkat[index].idrefValiditas == 2 ? "DISETUJUI(Atasan)" : "PROSES"}",
+        //                         "test",
+        //                         style: TextStyle(
+        //                             color: Colors.white,
+        //                             fontWeight: FontWeight.bold),
+        //                         overflow: TextOverflow.ellipsis,
+        //                         maxLines: 1),
+        //                     color:
+        //                         controller.listPangkat[index].idrefValiditas ==
+        //                                 4
+        //                             ? Colors.green
+        //                             : controller.listPangkat[index]
+        //                                         .idrefValiditas ==
+        //                                     3
+        //                                 ? Colors.green
+        //                                 : controller.listPangkat[index]
+        //                                             .idrefValiditas ==
+        //                                         2
+        //                                     ? Colors.green
+        //                                     : Colors.orangeAccent,
+        //                   )),
+        //               Spacer()
+        //             ]),
+        //             // children: [
+        //             //   Row(
+        //             //       crossAxisAlignment: CrossAxisAlignment.start,
+        //             //       mainAxisAlignment: MainAxisAlignment.end,
+        //             //       children: [
+        //             //         Text("Unit Organisasi:"),
+        //             //         Spacer(
+        //             //           flex: 1,
+        //             //         ),
+        //             //         Expanded(
+        //             //           flex: 3,
+        //             //           child: AutoSizeText(
+        //             //             "${controller.listPangkat[index].unit}",
+        //             //             textAlign: TextAlign.end,
+        //             //           ),
+        //             //         )
+        //             //       ]),
+        //             //   Row(
+        //             //       crossAxisAlignment: CrossAxisAlignment.start,
+        //             //       mainAxisAlignment: MainAxisAlignment.end,
+        //             //       children: [
+        //             //         Text("Jabatan:"),
+        //             //         Spacer(
+        //             //           flex: 1,
+        //             //         ),
+        //             //         Expanded(
+        //             //           flex: 3,
+        //             //           child: AutoSizeText(
+        //             //             "${controller.listPangkat[index].jabatan}",
+        //             //             textAlign: TextAlign.end,
+        //             //           ),
+        //             //         )
+        //             //       ]),
+        //             //   Row(
+        //             //       crossAxisAlignment: CrossAxisAlignment.start,
+        //             //       mainAxisAlignment: MainAxisAlignment.end,
+        //             //       children: [
+        //             //         Text("Jabatan Atasan:"),
+        //             //         Spacer(
+        //             //           flex: 1,
+        //             //         ),
+        //             //         Expanded(
+        //             //           flex: 3,
+        //             //           child: AutoSizeText(
+        //             //             "${controller.listPangkat[index].jabatanAtasan}",
+        //             //             textAlign: TextAlign.end,
+        //             //           ),
+        //             //         )
+        //             //       ]),
+        //             //   Row(
+        //             //       crossAxisAlignment: CrossAxisAlignment.start,
+        //             //       mainAxisAlignment: MainAxisAlignment.end,
+        //             //       children: [
+        //             //         Text("Status Jabatan:"),
+        //             //         Spacer(
+        //             //           flex: 1,
+        //             //         ),
+        //             //         Expanded(
+        //             //           flex: 3,
+        //             //           child: AutoSizeText(
+        //             //             "${controller.listPangkat[index].statusJabatan}",
+        //             //             textAlign: TextAlign.end,
+        //             //           ),
+        //             //         )
+        //             //       ]),
+        //             //   Row(
+        //             //       crossAxisAlignment: CrossAxisAlignment.start,
+        //             //       mainAxisAlignment: MainAxisAlignment.end,
+        //             //       children: [
+        //             //         Text("Nomor SK:"),
+        //             //         Spacer(
+        //             //           flex: 1,
+        //             //         ),
+        //             //         Expanded(
+        //             //           flex: 3,
+        //             //           child: AutoSizeText(
+        //             //             "${controller.listPangkat[index].noSk}",
+        //             //             textAlign: TextAlign.end,
+        //             //           ),
+        //             //         )
+        //             //       ]),
+        //             //   Row(
+        //             //       crossAxisAlignment: CrossAxisAlignment.start,
+        //             //       mainAxisAlignment: MainAxisAlignment.end,
+        //             //       children: [
+        //             //         Text("Tanggal SK:"),
+        //             //         Spacer(
+        //             //           flex: 1,
+        //             //         ),
+        //             //         Expanded(
+        //             //           flex: 3,
+        //             //           child: AutoSizeText(
+        //             //             "${Jiffy(controller.listPangkat[index].tanggalSk).yMMMMd}",
+        //             //             textAlign: TextAlign.end,
+        //             //           ),
+        //             //         )
+        //             //       ]),
+        //             //   Row(
+        //             //       crossAxisAlignment: CrossAxisAlignment.start,
+        //             //       mainAxisAlignment: MainAxisAlignment.end,
+        //             //       children: [
+        //             //         Text("Tanggal Pelantikan:"),
+        //             //         Spacer(
+        //             //           flex: 1,
+        //             //         ),
+        //             //         Expanded(
+        //             //           flex: 3,
+        //             //           child: AutoSizeText(
+        //             //             "${controller.listPangkat[index].tanggalPelantikan == null ? '-' : controller.listPangkat[index].tanggalPelantikan}",
+        //             //             textAlign: TextAlign.end,
+        //             //           ),
+        //             //         )
+        //             //       ]),
+        //             //   Row(
+        //             //       crossAxisAlignment: CrossAxisAlignment.start,
+        //             //       mainAxisAlignment: MainAxisAlignment.end,
+        //             //       children: [
+        //             //         Text("TMT:"),
+        //             //         Spacer(
+        //             //           flex: 1,
+        //             //         ),
+        //             //         Expanded(
+        //             //           flex: 3,
+        //             //           child: AutoSizeText(
+        //             //             "${Jiffy(controller.listPangkat[index].tanggalMulai).yMMMMd}",
+        //             //             textAlign: TextAlign.end,
+        //             //           ),
+        //             //         )
+        //             //       ]),
+        //             // ],
+        //           ),
+        //         ));
+        //       }),
+        //   onRefresh: () async {
+        //     controller.fetch();
+        //   },
+        // );
+
       }
     }));
   }

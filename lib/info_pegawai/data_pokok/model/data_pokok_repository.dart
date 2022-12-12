@@ -8,21 +8,21 @@ import '../../../api_url.dart';
 import '../../../app/repository/ekemenkeu_repository.dart';
 
 class DataPokokRepository {
-  EKemenkeuRepository? repository;
+  EKemenkeuRepository _repository = EKemenkeuRepository();
 
-  DataPokokRepository(EKemenkeuRepository repository) {
-    repository = repository;
-  }
+  // DataPokokRepository() {
+  //   _repository = EKemenkeuRepository();
+  // }
 
-  Future<List<DataPokok>?> getDataPokok(String data) async {
+  Future<DataPokok?> getDataPokok() async {
     try {
       Response res =
-          await repository!.dio.get('${ApiUrl.serviceUrl}/hris/profil/Pegawai');
-      log(jsonEncode(res.data));
-      return List<DataPokok>.from(
-          res.data['Data'].map((i) => DataPokok.fromJson(i)));
+          await _repository.dio.get('${ApiUrl.serviceUrl}/hris/profil/Pegawai');
+      // log(jsonEncode(res.data));
+      print(jsonEncode(res.data));
+      return DataPokok.fromJson(res.data["Data"]);
     } on DioError catch (e) {
-      print(e);
+      print("${e} eror di getDataPokok");
       return null;
     }
   }

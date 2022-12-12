@@ -9,18 +9,24 @@ import 'package:get/get.dart';
 class RiwayatJabatanController extends GetxController {
   var listPangkat = <Jabatan>[].obs;
   var isLoading = false.obs;
-  var repo = RiwayatRepository(EKemenkeuRepository());
-
-  void fetch() async {
-    // var sr = await
-    isLoading.value = true;
-    listPangkat.value = (await repo.getRiwayatJabatan())!;
-    isLoading.value = false;
-  }
+  var repo = RiwayatRepository();
 
   @override
   void onInit() {
     super.onInit();
     fetch();
+  }
+
+  void fetch() async {
+    // var sr = await
+    try {
+      print("HOHOHO");
+      isLoading.value = true;
+      listPangkat.value = (await repo.getRiwayatJabatan())!;
+      print(listPangkat.value);
+      isLoading.value = false;
+    } catch (e) {
+      print("${e} ELOLROLRL");
+    }
   }
 }
